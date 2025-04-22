@@ -1103,7 +1103,7 @@
         </div>
     </section>
     
-    <!-- Contact Section -->
+<!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <div class="section-header">
@@ -1172,26 +1172,36 @@
                 <div class="contact-form">
                     <h3 style="color: var(--primary); margin-bottom: 25px;">Send a Message</h3>
                     
-                    <form>
+                    <!-- 修改后的表单，使用formsubmit.co服务 -->
+                    <form action="https://formsubmit.co/Dr.HuiLiu.uk@gmail.com" method="POST">
+                        <!-- 添加防垃圾邮件蜜罐 -->
+                        <input type="text" name="_honey" style="display:none">
+                        
+                        <!-- 禁用验证码 -->
+                        <input type="hidden" name="_captcha" value="false">
+                        
+                        <!-- 成功后重定向到感谢页面，可以替换为您网站上的实际感谢页面 -->
+                        <input type="hidden" name="_next" value="https://yoursite.com/thanks.html">
+                        
                         <div class="form-grid">
                             <div class="form-group">
                                 <label for="contact-name">Name</label>
-                                <input type="text" id="contact-name" required>
+                                <input type="text" id="contact-name" name="name" required>
                             </div>
                             
                             <div class="form-group">
                                 <label for="contact-email">Email</label>
-                                <input type="email" id="contact-email" required>
+                                <input type="email" id="contact-email" name="email" required>
                             </div>
                             
                             <div class="form-group full">
                                 <label for="contact-subject">Subject</label>
-                                <input type="text" id="contact-subject" required>
+                                <input type="text" id="contact-subject" name="subject" required>
                             </div>
                             
                             <div class="form-group full">
                                 <label for="contact-message">Message</label>
-                                <textarea id="contact-message" required></textarea>
+                                <textarea id="contact-message" name="message" required></textarea>
                             </div>
                         </div>
                         
